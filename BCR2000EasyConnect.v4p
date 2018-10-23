@@ -1,0 +1,835 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\Users\daniel\Desktop\Projekte\20181021 - vvvv\Subpatches\BCR200EasyConnect.v4p" systemname="BCR200EasyConnect" filename="C:\Users\daniel\Desktop\Projekte\20181021 - vvvv\Subpatches\BCR200EasyConnect.v4p" locked="1">
+   <BOUNDS type="Window" left="1170" top="720" width="16515" height="14730">
+   </BOUNDS>
+   <NODE id="4" nodename=":MODULES:\vvvv group\_legacy\MidiController (Devices Legacy).v4p" componentmode="Hidden" systemname="MidiController (Devices Legacy)" filename="%VVVV%\lib\nodes\modules\_legacy\MidiController (Devices Legacy).v4p">
+   <BOUNDS height="270" left="6960" top="2070" type="Node" width="3660">
+   </BOUNDS>
+   <PIN pinname="Channel" visible="1">
+   </PIN>
+   <PIN pinname="Controller" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Midi Input Port" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Buffer Length" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="4935" top="6900" width="16920" height="6720">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="InABox" id="3" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="6960" top="1500" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="4650" top="5355" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="6960" top="1500" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="channel">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="15">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Channel" srcnodeid="3" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="2" nodename="IOBox (Enumerations)" systemname="IOBox (Enumerations)">
+   <BOUNDS height="0" left="9075" top="1500" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="7230" top="6495" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="255" left="9075" top="1500" type="Box" width="1545">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|MIDI device|">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="|BCR2000 port 1|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Midi Input Port" srcnodeid="2" srcpinname="Output Enum">
+   </LINK>
+   <NODE componentmode="InABox" id="1" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="8415" top="1500" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="7830" top="4200" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="8415" top="1500" type="Box" width="585">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|buffer length|">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="10">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Buffer Length" srcnodeid="1" srcpinname="Y Output Value">
+   </LINK>
+   <NODE id="0" nodename="I (Spreads)" systemname="I (Spreads)">
+   <BOUNDS height="0" left="7860" top="1500" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="[ From .." slicecount="1" values="1">
+   </PIN>
+   <PIN pinname=".. To [" slicecount="1" values="109">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Controller" srcnodeid="0" srcpinname="Output">
+   </LINK>
+   <NODE systemname="BCR200EasyConnect" filename="BCR200EasyConnect.v4p" nodename="C:\Users\daniel\Desktop\Projekte\20181021 - vvvv\Subpatches\BCR200EasyConnect.v4p" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="8265" top="2940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="8265" top="2940">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="6" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7245" y="2650">
+   </LINKPOINT>
+   <LINKPOINT x="8040" y="2600">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="BCR200EasyConnect" filename="BCR200EasyConnect.v4p" nodename="C:\Users\daniel\Desktop\Projekte\20181021 - vvvv\Subpatches\BCR200EasyConnect.v4p" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="9645" top="2940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="9645" top="2940">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="8" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7245" y="2650">
+   </LINKPOINT>
+   <LINKPOINT x="9840" y="2600">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="17">
+   <BOUNDS type="Node" left="7020" top="2925" width="885" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7020" top="2925" width="915" height="525">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|upper&cr;&lf;encoder|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="BCR200EasyConnect" filename="BCR200EasyConnect.v4p" nodename="C:\Users\daniel\Desktop\Projekte\20181021 - vvvv\Subpatches\BCR200EasyConnect.v4p" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="8265" top="3390" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="8265" top="3390">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="BCR200EasyConnect" filename="BCR200EasyConnect.v4p" nodename="C:\Users\daniel\Desktop\Projekte\20181021 - vvvv\Subpatches\BCR200EasyConnect.v4p" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="9645" top="3390" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="9645" top="3390">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="28" dstpinname="Input Spread">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="27" dstpinname="Input Spread">
+   </LINK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="8160" top="2940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="29" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="2625">
+   </LINKPOINT>
+   <LINKPOINT x="8160" y="2625">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="9660" top="2940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="30" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="2625">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="2625">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="32">
+   <BOUNDS type="Node" left="8160" top="3390" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="8">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="9660" top="3390" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="12">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="32" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="2843">
+   </LINKPOINT>
+   <LINKPOINT x="8145" y="2843">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="31" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="2850">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="2850">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="8160" top="3840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="9660" top="3840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="20">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="53">
+   <BOUNDS type="Node" left="8160" top="4290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="24">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="52">
+   <BOUNDS type="Node" left="9660" top="4290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="28">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="43" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="3083">
+   </LINKPOINT>
+   <LINKPOINT x="8160" y="3083">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="53" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="3315">
+   </LINKPOINT>
+   <LINKPOINT x="8160" y="3315">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="42" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="3075">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="3075">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="52" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="3300">
+   </LINKPOINT>
+   <LINKPOINT x="9645" y="3300">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="63">
+   <BOUNDS type="Node" left="8160" top="4890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="32">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="62">
+   <BOUNDS type="Node" left="9660" top="4890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="36">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="73">
+   <BOUNDS type="Node" left="8160" top="5340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="40">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="72">
+   <BOUNDS type="Node" left="9660" top="5340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="44">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="83">
+   <BOUNDS type="Node" left="8160" top="5790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="48">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="82">
+   <BOUNDS type="Node" left="9660" top="5790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="52">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="93">
+   <BOUNDS type="Node" left="8160" top="6240" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="56">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="92">
+   <BOUNDS type="Node" left="9660" top="6240" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="60">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="63" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="3615">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="3615">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="62" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="3600">
+   </LINKPOINT>
+   <LINKPOINT x="9645" y="3600">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="73" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="3833">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="3833">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="72" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="3833">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="3833">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="82" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="4058">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="4058">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="83" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="4058">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="4058">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="93" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="6990" y="4290">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="4290">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="92" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="4275">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="4275">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="102">
+   <BOUNDS type="Node" left="7020" top="4875" width="885" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7020" top="4875" width="1005" height="540">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|rotary&cr;&lf;pushbuttons|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="104">
+   <BOUNDS type="Node" left="8160" top="6840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="64">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="103">
+   <BOUNDS type="Node" left="9660" top="6840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="68">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="114">
+   <BOUNDS type="Node" left="8160" top="7290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="72">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="113">
+   <BOUNDS type="Node" left="9660" top="7290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="76">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="104" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="6990" y="4583">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="4583">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="103" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="4590">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="4590">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="113" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7020" y="4815">
+   </LINKPOINT>
+   <LINKPOINT x="9660" y="4815">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="114" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="6990" y="4815">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="4815">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="123">
+   <BOUNDS type="Node" left="7020" top="6825" width="885" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7020" top="6825" width="1005" height="540">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="pushbuttons">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="126">
+   <BOUNDS type="Node" left="8160" top="7890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="80">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="125">
+   <BOUNDS type="Node" left="9660" top="7890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="84">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="137">
+   <BOUNDS type="Node" left="8160" top="8340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="88">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="136">
+   <BOUNDS type="Node" left="9660" top="8340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="92">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="135">
+   <BOUNDS type="Node" left="7020" top="7875" width="885" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7020" top="7875" width="1005" height="540">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|lower&cr;&lf;encoder|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="126" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="6990" y="5115">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="5115">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="125" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="5108">
+   </LINKPOINT>
+   <LINKPOINT x="9675" y="5108">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="136" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="5333">
+   </LINKPOINT>
+   <LINKPOINT x="9675" y="5333">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="137" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="6990" y="5340">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="5340">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="148">
+   <BOUNDS type="Node" left="8160" top="8790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245,0.4245">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="96">
+   </PIN>
+   </NODE>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="147">
+   <BOUNDS type="Node" left="9660" top="8790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="100">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="147" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="5558">
+   </LINKPOINT>
+   <LINKPOINT x="9675" y="5558">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="148" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="6990" y="5550">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="5550">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="get4slices" filename="get4slices.v4p" nodename="get4slices.v4p" componentmode="Hidden" id="157">
+   <BOUNDS type="Node" left="9660" top="9390" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Spread" visible="1" slicecount="20" values="0.424533745041117,-0.366148727945983,-0.487835733918473,0.350686109159142,0.469730079872534,0.40537566319108,-0.423008005833253,0.108314549084753,0.412625964498147,-0.169853051193058,-0.0650750778149813,0.481447626370937,0.261063224403188,0.313341053202748,0.19167665601708,0.14782329229638,0.399581225356087,-0.493097147904336,0.00321180862374604,0.118465783540159">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   <PIN pinname="Output 4" visible="1">
+   </PIN>
+   <PIN pinname="Start Index" slicecount="1" values="104">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="157" dstpinname="Input Spread" linkstyle="VHV">
+   <LINKPOINT x="7005" y="5865">
+   </LINKPOINT>
+   <LINKPOINT x="9675" y="5865">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="162">
+   <BOUNDS type="Node" left="7020" top="9375" width="885" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7020" top="9375" width="1005" height="540">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|4 buttons&cr;&lf;lower right&cr;&lf;|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   </PATCH>
